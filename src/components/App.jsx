@@ -16,12 +16,6 @@ class App extends React.Component {
     });
   };
 
-  //    onLeaveFeedback = (option) => {
-  //     this.setState(prevState => {
-  //       return { [option]: prevState[option] + 1 };
-  //     })
-  //   };
-
   countTotalFeedback = () => {};
 
   countPositiveFeedbackPercentage = () => {};
