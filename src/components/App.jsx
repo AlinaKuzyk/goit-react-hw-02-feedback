@@ -13,7 +13,7 @@ class App extends React.Component {
 
   // вместо option мы принимаем или good/neutral/bad
   onLeaveFeedback = option => {
-    console.log(option);
+    //  console.log(option);
     this.setState(prevState => ({
       [option]: prevState[option] + 1,
     }));
@@ -24,7 +24,7 @@ class App extends React.Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    const sum = this.state.good + this.state.neutral + this.state.bad;
+    const sum = this.countTotalFeedback();
     return Math.floor((this.state.good / sum) * 100);
   };
 
@@ -41,7 +41,7 @@ class App extends React.Component {
         </Section>
 
         <Section title="Statistics">
-          {this.countTotalFeedback() > 0 ? (
+          {this.countTotalFeedback() ? (
             <Statistics
               good={good}
               neutral={neutral}
